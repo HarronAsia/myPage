@@ -1,16 +1,17 @@
 @extends('layouts.app')
 
 
+
 @section('content')
 
 <div class="container-fluid">
     <div class="row">
 
-    @if($user->background_photo != NULL)
-
-    <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="width:100%; height:600px; background-image: url(https://raw.githack.com/creativetmofficial/argon-dashboard/master/assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
+    @if($user->background_photo == NULL)
+   
+    <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="width:100%; height:600px; background-image: url(https://raw.githack.com/creativetimofficial/argon-dashboard/master/assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;">
     @else
-    <img src="{{asset('storage/'.$user->name.'/'.$user->background-photo)}}" alt="Image" style="width:100% ;height:600px;">
+
     @endif
         <!-- Header -->
      
