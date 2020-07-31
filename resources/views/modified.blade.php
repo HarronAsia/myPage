@@ -1,90 +1,95 @@
-<div class="container">
-    <div class="row">
-        <li class="list-group-item">
-            <div class="bg-danger text-dark">
-                @if(Auth::user()->role == 'admin')
-                <div class="col-md-4">
-                    <a href="{{ route('admin.category.add',['name' => Auth::user()->name])}}">
-                        <button type="button" class="btn btn-primary"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Add Category</button>
-                    </a>
-                </div>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        @if(Auth::guest())
+
+        @else
+        @if(Auth::user()->role == 'admin')
+        <a href="{{ route('admin.community.add')}}">
+            <button type="button" class="btn btn-primary"><i class="fas fa-plus-square"></i>&ensp;Add Community</button>
+        </a>
+        @else
+
+        @endif
+        @endif
+
+        @foreach($communities as $community)
+        <div class="col-md-4 col-sm-6">
+            <div class="box">
+                <svg class="curve1" x="0px" y="0px" viewBox="0 0 400 200">
+                    <path d="M398.938,143.806c-24.004,26.063-155.373,104.33-224.724,7.328 C69.626,4.846,0.5,71.583,0.5,71.583V1.5h398.629L398.938,143.806z"></path>
+                </svg>
+                @if(Auth::guest())
+                <a href="{{ route('manager.community.show',['id' => $community->id])}}">
                 @else
 
+                    @if(Auth::user()->role == 'manager')
+                    <a href="{{ route('manager.community.show',['id' => $community->id])}}">
+                        @elseif(Auth::user()->role == 'admin')
+                        <a href="{{ route('admin.community.show',['id' => $community->id])}}">
+                            @else
+                            <a href="{{ route('member.community.show',['id' => $community->id])}}">
+                                @endif
                 @endif
-                @foreach($categories as $category)
-                <div class="col-md-8">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <ul class="list-unstyled">
-                                <li class="media">
-                                    <div class="media-body">
-                                        @if(Auth::guest())
-                                        <a href="{{ route('category.index', ['id'=> $category->id])}}">
-                                            @elseif(Auth::user()->role == 'manager')
-                                            <a href="{{ route('manager.category.index', ['id'=> $category->id])}}">
-                                                @elseif(Auth::user()->role == 'admin')
-                                                <a href="{{ route('admin.category.index', ['id'=> $category->id])}}">
-                                                    @else
-                                                    <a href="{{ route('member.category.index', ['id'=> $category->id])}}">
-                                                        @endif
-                                                        <h1 class="mt-0 mb-1"> {{$category->name}}</h1>
-                                                    </a>
-                                                    @if(Auth::user()->role== 'admin')
-                                                    @if($category->deleted_at != NULL)
-                                                    <div class="pull-right">
-                                                        <a href="{{ route('admin.category.restore', ['id'=> $category->id])}}">
-                                                            <button type="button" class="btn btn-success btn-lg">
-                                                                <i class="fa fa-undo"></i>
-                                                            </button>
-                                                        </a>
-                                                    </div>
-                                                    @else
-                                                    <div class="pull-right">
-                                                        <a href="{{ route('admin.category.edit', ['id'=> $category->id])}}">
-                                                            <button type="button" class="btn btn-info btn-lg">
-                                                                <i class="fa fa-edit">&nbsp;&nbsp;</i>
-                                                            </button>
-                                                        </a>
-                                                    </div>
-                                                    <div class="pull-right">
-                                                        <a href="{{ route('admin.category.delete', ['id'=> $category->id])}}">
-                                                            <button type="button" class="btn btn-danger btn-lg">
-                                                                <i class="fa fa-trash">&nbsp;&nbsp;</i>
-                                                            </button>
-                                                        </a>
-                                                    </div>
-                                                    @endif
-                                                    @else
-
-                                                    @endif
-                                                    <p>{{$category->detail}}</p>
-                                    </div>
+                            @if($community->banner != NULL)
+                            <img src="{{asset('storage/community/'.$community->title.'/'.$community->banner.'/')}}" alt="Image" style="width:200px ;height:200px;">
+                            @else
+                            <img src="{{asset('storage/blank.png')}}" alt="Image" style="width:200px ;height:200px;">
+                            @endif
+                        
+                        </a>
+                        <div class="box-content">
+                            <h3 class="title"> {{$community->title}}</h3>
+                            <span class="post">{{$community->created_at}}</span>
+                            @if(Auth::user()->role == 'admin')
+                            @if($community->deleted_at == NULL)
+                            <ul class="icon">
+                                <li>
+                                    <a href="{{route('admin.community.restore',['id' => $community->id])}}">
+                                        <button type="button" class="btn btn-success btn-lg">
+                                            <i class="fa fa-undo"></i>
+                                        </button>
+                                    </a>
                                 </li>
-
-                                @foreach($category->forums as $forum)
-                                <li class="media spacer">
-                                    <div class="media-body">
-                                        @if(Auth::guest())
-                                        <a href="{{ route('forum.show', ['categoryid'=> $category->id,'forumid' => $forum->id])}}">
-                                            @elseif(Auth::user()->role == 'manager')
-                                            <a href="{{ route('manger.forum.show', ['categoryid'=> $category->id,'forumid' => $forum->id])}}">
-                                                @elseif(Auth::user()->role == 'admin')
-                                                <a href="{{ route('admin.forum.show', ['categoryid'=> $category->id,'forumid' => $forum->id])}}">
-                                                    @else
-                                                    <a href="{{ route('member.forum.show', ['categoryid'=> $category->id,'forumid' => $forum->id])}}">
-                                                        @endif
-
-                                                        <h5 class="mt-0 mb-1">{{$forum->title}}</h5>
-                                                    </a>
-                                    </div>
-                                </li>
-                                @endforeach
                             </ul>
+                            @else
+                            <ul class="icon">
+                                <li>
+                                    <a href="{{route('admin.community.edit',['id' => $community->id])}}">
+                                        <button type="button" class="btn btn-info btn-lg">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('admin.community.delete',['id' => $community->id])}}">
+                                        <button type="button" class="btn btn-danger btn-lg">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </a>
+                                </li>
+                            </ul>
+                            @endif
+
+                            @else
+
+                            @endif
                         </div>
-                    </div>
-                </div>
-                @endforeach
+                        <svg class="curve2" x="0px" y="0px" width="150px" height="150px" viewBox="0 0 150 50">
+                            <path d="M1.114,7.567C87.544-33.817,150,150.5,150,150.5H1.361L1.114,7.567z"></path>
+                        </svg>
             </div>
-        </li>
+        </div>
+        @endforeach
+        {{ $communities->links() }}
+
     </div>
 </div>

@@ -107,11 +107,11 @@
                                 </div>
 
                                 <div class="col-3">
-                                    <a href="{{ route('profile.edit', ['name' => Auth::user()->name?? '','id'=> Auth::user()->id])}}" class="btn btn-info"><i class="fas fa-user-ninja"></i> &nbsp;&nbsp;Edit Profile</a>
+                                    <a href="{{ route('profile.edit', ['name' => Auth::user()->name?? '','id'=> Auth::user()->id])}}" class="btn btn-info"><i class="fas fa-user-ninja"></i> &ensp;Edit Profile</a>
                                 </div>
                             
                                 <div class="col-2">
-                                    <a href="{{ route('account.profile', ['name' => Auth::user()->name?? '','id'=> Auth::user()->id])}}" class="btn btn-info"><i class="fas fa-user-secret"></i> &nbsp;&nbsp;Personal Profile</a>
+                                    <a href="{{ route('account.profile', ['name' => Auth::user()->name?? '','id'=> Auth::user()->id])}}" class="btn btn-info"><i class="fas fa-user-secret"></i> &ensp;Personal Profile</a>
                                 </div>
                             </div>
                         </div>

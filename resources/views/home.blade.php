@@ -22,7 +22,7 @@
                             </dt>
                         </div>
 
-                        <dd style="font-size: 15px;">&nbsp;&nbsp;{{$category->detail}}</dd>
+                        <dd style="font-size: 15px;">&ensp;{{$category->detail}}</dd>
                     </dl>
                     <ol class="list-group">
                         @foreach($category->forums as $forum)
@@ -45,7 +45,7 @@
             @if(Auth::user()->role == 'admin')
             <div class="text-right">
                 <a href="{{ route('admin.category.add',['name' => Auth::user()->name])}}">
-                    <button type="button" class="btn btn-primary" style="background-color: #D9A9BB; color:black; border:none;"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Add Category</button>
+                    <button type="button" class="btn btn-primary" style="background-color: #D9A9BB; color:black; border:none;"><i class="fas fa-plus-square"></i>&ensp;Add Category</button>
                 </a>
             </div>
             @else
@@ -63,7 +63,7 @@
                             @else
                             <a href="{{ route('member.category.index', ['id'=> $category->id])}}" style="font-size: 25px;color: #012615;">
                                 @endif
-                                &nbsp;&nbsp;{{$category->name}}
+                                &ensp;{{$category->name}}
                             </a>
                             @if($category->deleted_at != NULL)
 
@@ -77,19 +77,19 @@
 
                             <a href="{{ route('admin.category.edit', ['id'=> $category->id])}}">
                                 <button type="button" class="btn btn-info btn-lg">
-                                    <i class="fa fa-edit">&nbsp;&nbsp;</i>
+                                    <i class="fa fa-edit">&ensp;</i>
                                 </button>
                             </a>
 
                             <a href="{{ route('admin.category.delete', ['id'=> $category->id])}}">
                                 <button type="button" class="btn btn-danger btn-lg">
-                                    <i class="fa fa-trash">&nbsp;&nbsp;</i>
+                                    <i class="fa fa-trash">&ensp;</i>
                                 </button>
                             </a>
 
                             @endif
 
-                            <p style="font-size: 15px; color: #012615;">&nbsp;&nbsp;{{$category->detail}}</p>
+                            <p style="font-size: 15px; color: #012615;">&ensp;{{$category->detail}}</p>
                 </div>
 
                 @foreach($category->forums as $forum)

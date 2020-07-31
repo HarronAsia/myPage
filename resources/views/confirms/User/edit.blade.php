@@ -16,26 +16,26 @@
                 @else
                 <img src="{{asset('storage/'.$user->name.'/'.$user->photo)}}" alt="Image" style="width:200px ;height:200px;">
                 @endif
-                &nbsp;&nbsp;<i class="fa fa-arrow-right" style="font-size:48px;"></i>&nbsp;&nbsp;
+                &ensp;<i class="fa fa-arrow-right" style="font-size:48px;"></i>&ensp;
                 <img id="image_preview_container" src="{{asset('storage/default.png')}}" alt="preview image" style="max-width: 500px ; max-height:500px;">
                 <div>
-                    <i class="fas fa-image"></i>&nbsp;&nbsp;<label for="photo">Your Image</label>
+                    <i class="fas fa-image"></i>&ensp;<label for="photo">Your Image</label>
                     <input type="file" class="form-control" name="photo" id="photo" value="{{ $user->photo}}">
                 </div>
             </div>
 
             <div class="form-group">
-                <i class="fas fa-user"></i> &nbsp;&nbsp;<label for="name">Your name</label>
+                <i class="fas fa-user"></i> &ensp;<label for="name">Your name</label>
                 <input class="form-control" name="name" placeholder="Enter Your Name" value="{{ $user->name}}" >
             </div>
 
             <div class="form-group">
-                <i class="fas fa-calendar"></i>&nbsp;&nbsp;<label for="dob">Your Birthday</label>
+                <i class="fas fa-calendar"></i>&ensp;<label for="dob">Your Birthday</label>
                 <input type="date" class="form-control" name="dob" placeholder="Enter Your DOB" value="{{ $user->dob }}" >
             </div>
 
             <div class="form-group">
-                <i class="fas fa-phone"></i>&nbsp;&nbsp;<label for="number">Your Phone Number</label>
+                <i class="fas fa-phone"></i>&ensp;<label for="number">Your Phone Number</label>
                 <input type="tel" class="form-control" name="number" placeholder="Enter Your Phone Number" value="{{ $user->number }}" >
             </div>
 
@@ -66,27 +66,27 @@
                     @else
                     <img src="{{asset('storage/'.$user->name.'/'.$user->photo)}}" alt="Image" style="width:200px ;height:200px;">
                     @endif
-                    &nbsp;&nbsp;<i class="fa fa-arrow-right" style="font-size:48px;"></i>&nbsp;&nbsp;
+                    &ensp;<i class="fa fa-arrow-right" style="font-size:48px;"></i>&ensp;
                     <img id="image_preview_container" src="{{asset('storage/default.png')}}" alt="preview image" style="max-width: 500px ; max-height:500px;">
                     <div>
-                        <i class="fas fa-image"></i>&nbsp;&nbsp;<label for="photo">Your Image</label>
+                        <i class="fas fa-image"></i>&ensp;<label for="photo">Your Image</label>
                         <input type="file" class="form-control" name="photo" id="photo" required>
                       
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <i class="fas fa-user"></i> &nbsp;&nbsp;<label for="name">Your name</label>
+                    <i class="fas fa-user"></i> &ensp;<label for="name">Your name</label>
                     <input class="form-control" name="name" placeholder="Enter Your Name" value="{{ $user->name}}" >
                 </div>
 
                 <div class="form-group">
-                    <i class="fas fa-calendar"></i>&nbsp;&nbsp;<label for="dob">Your Birthday</label>
+                    <i class="fas fa-calendar"></i>&ensp;<label for="dob">Your Birthday</label>
                     <input type="date" class="form-control" name="dob" placeholder="Enter Your DOB" value="{{ $user->dob }}" >
                 </div>
 
                 <div class="form-group">
-                    <i class="fas fa-phone"></i>&nbsp;&nbsp;<label for="number">Your Phone Number</label>
+                    <i class="fas fa-phone"></i>&ensp;<label for="number">Your Phone Number</label>
                     <input type="tel" class="form-control" name="number" placeholder="Enter Your Phone Number" value="{{ $user->number }}" >
                 </div>
 

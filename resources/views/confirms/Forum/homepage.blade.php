@@ -25,13 +25,13 @@
                         @if(Auth::user()->role == 'admin')
                         <div class="text-right">
                             <a href="{{ route('admin.forum.add', ['categoryid'=> $category->id])}}">
-                                <button type="button" class="btn btn-primary"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Add Forum</button>
+                                <button type="button" class="btn btn-primary"><i class="fas fa-plus-square"></i>&ensp;Add Forum</button>
                             </a>
                         </div>
                         @elseif(Auth::user()->role == 'manager')
                         <div class="text-right">
                             <a href="{{ route('manager.forum.add', ['categoryid'=> $category->id])}}">
-                                <button type="button" class="btn btn-primary"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Add Forum</button>
+                                <button type="button" class="btn btn-primary"><i class="fas fa-plus-square"></i>&ensp;Add Forum</button>
                             </a>
                         </div>
                         @else

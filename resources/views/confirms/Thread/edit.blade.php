@@ -30,7 +30,7 @@
                 <label for="thumbnail">Upload Your Image</label>
                 <div>
                     <img src="{{asset('storage/thread/'.$thread->title.'/'.$thread->thumbnail.'/')}}" alt="Image" style="max-width: 500px ; max-height:500px;">
-                    &nbsp;&nbsp;<i class="fa fa-arrow-right" style="font-size:48px;"></i>&nbsp;&nbsp;
+                    &ensp;<i class="fa fa-arrow-right" style="font-size:48px;"></i>&ensp;
                     <img id="image_preview_container" src="#" alt="preview image" style="max-width: 500px ; max-height:500px;">
                 </div>
                 <input type="file" class="form-control" name="thumbnail" id="thumbnail">
@@ -89,7 +89,7 @@
                 <label for="thumbnail">Upload Your Image</label>
                 <div>
                     <img src="{{asset('storage/thread/'.$thread->title.'/'.$thread->thumbnail.'/')}}" alt="Image" style="max-width: 500px ; max-height:500px;">
-                    &nbsp;&nbsp;<i class="fa fa-arrow-right" style="font-size:48px;"></i>&nbsp;&nbsp;
+                    &ensp;<i class="fa fa-arrow-right" style="font-size:48px;"></i>&ensp;
                     <img id="image_preview_container" src="#" alt="preview image" style="max-width: 500px ; max-height:500px;">
                 </div>
                 <input type="file" class="form-control" name="thumbnail" id="thumbnail">

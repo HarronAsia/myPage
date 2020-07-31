@@ -17,7 +17,7 @@
                     @if(Auth::user()->role == 'admin')
                    
                     <a href="{{ route('admin.thread.add', ['id'=> $forum->id])}}">
-                        <button type="button" class="btn btn-primary"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Add Thread</button>
+                        <button type="button" class="btn btn-primary"><i class="fas fa-plus-square"></i>&ensp;Add Thread</button>
                     </a>
                     @else
                         @if(Auth::user()->email_verified_at == NULL)
@@ -25,12 +25,12 @@
                         @else
                             @if(Auth::user()->role == 'manager')
                             <a href="{{ route('manager.thread.add', ['id'=> $forum->id])}}">
-                                <button type="button" class="btn btn-primary"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Add Thread</button>
+                                <button type="button" class="btn btn-primary"><i class="fas fa-plus-square"></i>&ensp;Add Thread</button>
                             </a>
                             
                             @else
                             <a href="{{ route('member.thread.add', ['id'=> $forum->id])}}">
-                                <button type="button" class="btn btn-primary"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Add Thread</button>
+                                <button type="button" class="btn btn-primary"><i class="fas fa-plus-square"></i>&ensp;Add Thread</button>
                             </a>
                             @endif
                         @endif

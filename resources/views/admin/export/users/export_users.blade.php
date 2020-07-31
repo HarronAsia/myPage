@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="card-header" align="center">
             <a href="{{ route('admin.export.users')}}" class="btn btn-success">
-                <i class="fa fa-file-excel-o"></i>&nbsp;&nbsp;Export Users
+                <i class="fa fa-file-excel-o"></i>&ensp;Export Users
             </a>
         </div>
         <div class="card-body">

@@ -27,7 +27,7 @@
                                 <label for="image">Upload Your Image</label>
                                 <div>
                                     <img src="{{asset('storage/post/'.$post->user_id.'/'.$post->image.'/')}}" alt="image" style="max-width: 200px ; max-height:200px;">
-                                    &nbsp;&nbsp;<i class="fa fa-arrow-right" style="font-size:48px;"></i>&nbsp;&nbsp;
+                                    &ensp;<i class="fa fa-arrow-right" style="font-size:48px;"></i>&ensp;
                                     <img id="image_preview_container" src="#" alt="preview image" style="max-width: 150px ; max-height:150px;">
                                 </div>
                                 <input type="file" class="form-control" name="image" id="image">

@@ -65,8 +65,9 @@ class CommentController extends Controller
      */
     public function store(StoreComment $request, $id)
     {
+        
         $data = $request->validated();
-
+        
         $post = $this->postRepo->showpost($id);
 
         if ($request->hasFile('comment_image')) {

@@ -43,7 +43,7 @@ Route::group([
 
     Route::get('/Community/community/community', 'CommunityController@index')->name('community.homepage');
 
-    Route::get('/community/{id}', 'CommunityController@show')->name('community.show');
+    Route::get('/community/{id}/community/community/community', 'CommunityController@show')->name('community.show');
 });
 
 Route::get('/{id}/mark-as-read', 'HomeController@readAt')->name('notification.read');

@@ -27,7 +27,7 @@
                                 <label for="banner">Upload Your Banner</label>
                                 <div>
                                     <img src="{{asset('storage/community/'.$community->title.'/'.$community->banner.'/')}}" alt="Image" style="max-width:250px ; max-height:250px;">
-                                    &nbsp;&nbsp;<i class="fa fa-arrow-right" style="font-size:48px;"></i>&nbsp;&nbsp;
+                                    &ensp;<i class="fa fa-arrow-right" style="font-size:48px;"></i>&ensp;
                                     <img id="image_preview_container" src="#" alt="preview image" style="max-width: 250px ; max-height:250px;">
                                 </div>
                                 <input type="file" class="form-control" name="banner" id="banner">

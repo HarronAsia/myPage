@@ -28,7 +28,7 @@
                                 <label for="image">Upload Your Image</label>
                                 <div>
                                     <img src="{{asset('storage/comment/'.Auth::user()->name.'/'.$comment->comment_image)}}" alt="image" style="max-width: 200px ; max-height:200px;">
-                                    &nbsp;&nbsp;<i class="fa fa-arrow-right" style="font-size:48px;"></i>&nbsp;&nbsp;
+                                    &ensp;<i class="fa fa-arrow-right" style="font-size:48px;"></i>&ensp;
                                     <img id="image_preview_container2" src="#" alt="preview image" style="max-width: 200px ; max-height:200px;">
                                 </div>
                                 <input type="file" class="form-control" name="comment_image" id="comment_image">

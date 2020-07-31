@@ -6,7 +6,7 @@
     <div class="row">
 
         <header>
-            <h1> <i class="fa fa-envelope"></i>&nbsp;&nbsp;All Unread Messages</h1>
+            <h1> <i class="fa fa-envelope"></i>&ensp;All Unread Messages</h1>
         </header>
 
         <div class="pull-right">

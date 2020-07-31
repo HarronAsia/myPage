@@ -10,7 +10,7 @@ class Post extends Model
 {
     use SoftDeletes,Notifiable;
 
-    protected $fillable = ['detail','image'];
+    protected $fillable = ['detail','image','status'];
     protected $hidden = ['user_id', 'community_id',];
 
 

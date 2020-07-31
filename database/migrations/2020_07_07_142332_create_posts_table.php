@@ -18,7 +18,8 @@ class CreatePostsTable extends Migration
             
             $table->string('detail');
             $table->string('image');
-
+            $table->string('status')->nullable();
+            
             $table->unsignedBigInteger('community_id')->nullable();
             $table->foreign('community_id')->references('id')->on('communities')->onDelete('cascade');
 

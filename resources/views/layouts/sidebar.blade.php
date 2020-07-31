@@ -24,25 +24,25 @@
         <hr>
         <div class="user-panel">
             <!-- Status -->
-            <a href="/"> <i class="fas fa-home" style="font-size: 30px;"></i>&nbsp;&nbsp;Home</a>
+            <a href="/"> <i class="fas fa-home" style="font-size: 30px;"></i>&ensp;Home</a>
         </div>
         <hr>
         @if(Auth::guest())
         <div class="user-panel">
-            <a href="{{ route('community.homepage')}}"><i class="fas fa-users" style="font-size: 30px;"></i> &nbsp;&nbsp;Community</a>
+            <a href="{{ route('community.homepage')}}"><i class="fas fa-users" style="font-size: 30px;"></i> &ensp;Community</a>
         </div>
         @else
         @if(Auth::user()->role == 'manager')
         <div class="user-panel">
-            <a href="{{ route('manager.community.homepage')}}"><i class="fas fa-users" style="font-size: 30px;"></i> &nbsp;&nbsp; Community</a>
+            <a href="{{ route('manager.community.homepage')}}"><i class="fas fa-users" style="font-size: 30px;"></i> &ensp; Community</a>
         </div>
         @elseif(Auth::user()->role =='admin')
         <div class="user-panel">
-            <a href="{{ route('admin.community.homepage')}}"><i class="fas fa-users" style="font-size: 30px;"></i> &nbsp;&nbsp; Community</a>
+            <a href="{{ route('admin.community.homepage')}}"><i class="fas fa-users" style="font-size: 30px;"></i> &ensp; Community</a>
         </div>
         @else
         <div class="user-panel">
-            <a href="{{ route('member.community.homepage')}}"><i class="fas fa-users" style="font-size: 30px;"></i> &nbsp;&nbsp; Community</a>
+            <a href="{{ route('member.community.homepage')}}"><i class="fas fa-users" style="font-size: 30px;"></i> &ensp; Community</a>
         </div>
         @endif
         <hr>
@@ -55,21 +55,21 @@
         <div class="user-panel">
 
             <!-- Status -->
-            <a href="{{ route('admin.dashboard', ['id'=>Auth::user()->id])}}"><i class="fas fa-chart-line" style="font-size: 30px;"></i>&nbsp;&nbsp; DashBoard</a>
+            <a href="{{ route('admin.dashboard', ['id'=>Auth::user()->id])}}"><i class="fas fa-chart-line" style="font-size: 30px;"></i>&ensp; DashBoard</a>
 
         </div>
         <hr>
         <div class="user-panel">
 
             <!-- Status -->
-            <a href="{{ route('admin.export.user')}}"><i class="fas fa-file-export" style="font-size: 30px;"></i>&nbsp;&nbsp; Export Users list</a>
+            <a href="{{ route('admin.export.user')}}"><i class="fas fa-file-export" style="font-size: 30px;"></i>&ensp; Export Users list</a>
 
         </div>
         <hr>
         <div class="user-panel">
 
             <!-- Status -->
-            <a href="{{ route('admin.export.thread')}}"><i class="fas fa-file-export" style="font-size: 30px;"></i>&nbsp;&nbsp; Export threads List</a>
+            <a href="{{ route('admin.export.thread')}}"><i class="fas fa-file-export" style="font-size: 30px;"></i>&ensp; Export threads List</a>
 
         </div>
 

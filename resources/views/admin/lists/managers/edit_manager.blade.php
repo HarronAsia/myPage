@@ -15,36 +15,36 @@
                 @else
                 <img src="{{asset('storage/'.$user->name.'/'.$user->photo)}}" alt="Image" style="width:200px ;height:200px;">
                 @endif
-                &nbsp;&nbsp;<i class="fa fa-arrow-right" style="font-size:48px;"></i>&nbsp;&nbsp;
+                &ensp;<i class="fa fa-arrow-right" style="font-size:48px;"></i>&ensp;
                 <img id="image_preview_container" src="{{asset('storage/default.png')}}" alt="preview image" style="max-width: 500px ; max-height:500px;">
                 <div>
-                    <i class="fas fa-image"></i>&nbsp;&nbsp;<label for="photo">User Avatar</label>
+                    <i class="fas fa-image"></i>&ensp;<label for="photo">User Avatar</label>
                     <input type="file" class="form-control" name="photo" id="photo" value="{{ $user->photo}}" required>
                 </div>
             </div>
 
             <div class="form-group">
-                <i class="fas fa-user"></i> &nbsp;&nbsp;<label for="name">User Name</label>
+                <i class="fas fa-user"></i> &ensp;<label for="name">User Name</label>
                 <input type="text" class="form-control" name="name" placeholder="Enter Your Name" value="{{ $user->name}}"required>
             </div>
 
             <div class="form-group">
-                <i class="far fa-envelope"></i>&nbsp;&nbsp;<label for="number">User Email</label>
+                <i class="far fa-envelope"></i>&ensp;<label for="number">User Email</label>
                 <input type="email" class="form-control" name="email" placeholder="Enter Your Phone Number" value="{{ $user->email }}"required>
             </div>
 
             <div class="form-group">
-                <i class="fas fa-key"></i></i>&nbsp;&nbsp;<label for="number">User Password</label>
+                <i class="fas fa-key"></i></i>&ensp;<label for="number">User Password</label>
                 <input type="password" class="form-control" name="password" placeholder="Enter Your Phone Number" value="{{ $user->password }}"required>
             </div>
 
             <div class="form-group">
-                <i class="fas fa-calendar"></i>&nbsp;&nbsp;<label for="dob">User Birthday</label>
+                <i class="fas fa-calendar"></i>&ensp;<label for="dob">User Birthday</label>
                 <input type="date" class="form-control" name="dob" placeholder="Enter Your DOB" value="{{ $user->dob }}" required>
             </div>
 
             <div class="form-group">
-                <i class="fas fa-phone"></i>&nbsp;&nbsp;<label for="number">User Phone Number</label>
+                <i class="fas fa-phone"></i>&ensp;<label for="number">User Phone Number</label>
                 <input type="tel" class="form-control" name="number" placeholder="Enter Your Phone Number" value="{{ $user->number }}"required>
             </div>
 

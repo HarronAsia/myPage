@@ -140,7 +140,7 @@ class CommunityController extends Controller
         } else {
             $community = $this->commuRepo->showcommunity($id);
             $posts = $this->postRepo->showall($community->id);
-
+          
             $notifications  = $this->notiRepo->showallUnreadbyUser(Auth::user()->id);
             $profile = $this->profileRepo->getProfile(Auth::user()->id);
 

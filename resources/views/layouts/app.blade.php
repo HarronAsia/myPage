@@ -10,6 +10,7 @@
     <!-- Bootstrap 3.3.7 -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
@@ -37,7 +38,7 @@
     @if (!Auth::guest())
 
     <!-- Main Header -->
-    <header class="main-header" >
+    <header class="main-header">
 
         <!-- Logo -->
         <a href="/" class="logo">
@@ -45,7 +46,7 @@
         </a>
 
         <!-- Header Navbar -->
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <!-- Sidebar toggle button-->
             <button class="btn btn-dark" data-toggle="push-menu">
                 <span class="navbar-toggler-icon"></span>
@@ -57,16 +58,16 @@
                     <li class="nav-item dropdown">
 
                         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            <i class="fas fa-user"></i>&nbsp;&nbsp;{{ucfirst(Auth::user()->name)}}
+                            <i class="fas fa-user"></i>&ensp;{{ucfirst(Auth::user()->name)}}
                         </a>
 
                         <div class="dropdown-menu">
                             <a href="{{route('profile.index',['name'=>Auth::user()->name?? '', 'id'=>Auth::user()->id])}}">
-                                <p class="dropdown-item"><i class="fas fa-user-tie"></i>&nbsp;&nbsp;Profile</p>
+                                <p class="dropdown-item"><i class="fas fa-user-tie"></i>&ensp;Profile</p>
                             </a>
 
                             <button type="submit" class="dropdown-item" style="background-color: red;" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                <i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;Log Out
+                                <i class="fas fa-sign-out-alt"></i>&ensp;Log Out
                             </button>
 
                             <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
@@ -145,7 +146,7 @@
                     <li class="nav-item dropdown">
 
                         <a href="{{route('home')}}">
-                        &nbsp;&nbsp; <i class="fas fa-user-tie"></i>&nbsp;&nbsp;Home&nbsp;&nbsp;
+                            &ensp; <i class="fas fa-user-tie"></i>&ensp;Home&ensp;
                         </a>
                     </li>
 
@@ -153,14 +154,14 @@
 
 
                         <a href="{{ url('/login') }}">
-                        &nbsp;&nbsp;<i class="fas fa-user-tie"></i>&nbsp;&nbsp;Login&nbsp;&nbsp;
+                            &ensp;<i class="fas fa-user-tie"></i>&ensp;Login&ensp;
                         </a>
 
                     </li>
                     <li class="nav-item dropdown">
 
                         <a href="{{ url('/register') }}">
-                        &nbsp;&nbsp;<i class="fas fa-user-tie"></i>&nbsp;&nbsp;Register&nbsp;&nbsp;
+                            &ensp;<i class="fas fa-user-tie"></i>&ensp;Register&ensp;
                         </a>
 
                     </li>
@@ -191,8 +192,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
     <!-- jQuery 3.1.1 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <!-- AdminLTE App -->
@@ -237,7 +244,6 @@
                 }
             }
 
-
             $("#photo").change(function() {
                 PreviewImage(this);
             });
@@ -258,13 +264,20 @@
                 PreviewImage(this);
             });
 
-            $("#comment_image").change(function() {
+            $("comment_image").change(function() {
+                PreviewImage2(this);
+            });
+
+            $("#comment_image_thread").change(function() {
                 PreviewImage2(this);
             });
 
             //Preview Image-----------------------------------------------------------------------//
 
-
+            $(".dropdown-menu li a").click(function() {
+                var selText = $(this).text();
+                $(this).parents('.btn-group').find('.dropdown-toggle').html(selText + ' <span class="caret"></span>');
+            });
         });
     </script>
 </body>

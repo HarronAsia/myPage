@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="card-header" align="center">
             <a href="{{ route('admin.export.threads')}}" class="btn btn-success">
-                <i class="fa fa-file-excel-o"></i>&nbsp;&nbsp;Export thread
+                <i class="fa fa-file-excel-o"></i>&ensp;Export thread
             </a>
             <hr>
 
